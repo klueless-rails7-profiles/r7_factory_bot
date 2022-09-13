@@ -3,12 +3,27 @@
 <h1>Regions</h1>
 
 <div id="regions">
-  <% @regions.each do |region| %>
-    <%= render region %>
-    <p>
-      <%= link_to "Show this region", region %>
-    </p>
-  <% end %>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Settings</th>
+      </tr>
+    </thead>
+    <tbody>
+
+    <% @regions.each do |region| %>
+      <tr>
+        <td><%= region.name %></td>
+        <td><%= region.settings %></td>
+        <td><%= link_to "Show", region %></td>
+      </tr>
+    <% end %>
+
+    </tbody>
+  </table>
+
 </div>
 
 <%= link_to "New region", new_region_path %>

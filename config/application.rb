@@ -33,5 +33,7 @@ module R7FactoryBot
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+
+    config.factory_bot.definition_file_paths = ["custom_factories"]
   end
 end

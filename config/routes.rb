@@ -7,9 +7,9 @@ Rails.application.routes.draw do
   resources :projects
   resources :employee_roles
   resources :employees
+  resources :roles
   resources :companies
   resources :regions
-  resources :roles
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
