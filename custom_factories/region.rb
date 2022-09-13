@@ -3,48 +3,30 @@ FactoryBot.define do
     name { Faker::Australia.location } # Faker::App.name
     settings { Faker::Json.shallow_json(width: 3, options: { key: 'Name.first_name', value: 'Name.last_name' }) }
 
-    # trait :null do
-    #   name nil
-    #   description nil
-    #   settings nil
-    # end
+    # These traits are used to define well known variations of a factory
+    trait :western_sydney do
+      name { 'Western Sydney' }
+      settings { { 'suburbs' => ['Blacktown', 'Parramatta', 'Penrith', 'Campbelltown', 'Liverpool'] } }
+    end
+
+    trait :sydney do
+      name { 'Sydney CBD' }
+      settings { { 'suburbs' => ['Sydney', 'Sydney CBD', 'Surry Hills', 'Darling Harbour', 'Barangaroo'] } }
+    end
+
+    trait :eastern_suburbs do
+      name { 'Eastern Suburbs' }
+      settings { { 'suburbs' => ['Bondi', 'Bondi Beach', 'Bondi Junction', 'Bronte', 'Coogee', 'Darlinghurst'] }}
+    end
+
+    trait :inner_west do
+      name { 'Inner West' }
+      settings { { 'suburbs' => ['Ashfield', 'Burwood', 'Campsie', 'Croydon', 'Newtown'] } }
+    end
+
+    trait :north_shore do
+      name { 'North Shore' }
+      settings { { 'suburbs' => ['Pymble', 'Castle Cove', 'Castlecrag', 'Chatswood', 'Crows Nest', 'Cremorne'] } }
+    end
   end
-end
-
-def examples
-  # description { Faker::Lorem.paragraphs(number: rand(1...3)).join("\n") }
-  Faker::Name.name
-  Faker::Name.unique.name
-
-  Faker::Internet.email
-
-  Faker::Artist.name
-  Faker::Address.city #=> "Imogeneborough"
-  Faker::Address.street_name #=> "Larkin Fork"
-  Faker::Address.street_address #=> "282 Kevin Brook"
-  Faker::Address.secondary_address #=> "Apt. 672"
-  Faker::Address.building_number #=> "7304"
-  Faker::Address.mail_box #=> "PO Box 123"
-  Faker::Address.community #=> "University Crossing"
-  Faker::Address.zip_code #=> "58517" or "23285-4905"
-  Faker::Address.zip #=> "58517" or "66259-8212"
-  Faker::Address.postcode #=> "76032-4907" or "58517"
-  Faker::Address.time_zone #=> "Asia/Yakutsk"
-  Faker::Address.street_suffix #=> "Street"
-  Faker::Address.city_suffix #=> "fort"
-  Faker::Address.city_prefix #=> "Lake"
-  Faker::Address.state #=> "California"
-  Faker::Address.state_abbr #=> "AP"
-  Faker::Address.country #=> "French Guiana"
-
-  # Keyword arguments: code
-  Faker::Address.country_by_code(code: 'NL') #=> "Netherlands"
-
-  # Keyword arguments: name
-  Faker::Address.country_name_to_code(name: 'united_states') #=> "US"
-  Faker::Address.country_code #=> "IT"
-  Faker::Address.country_code_long #=> "ITA"
-  Faker::Address.latitude #=> "-58.17256227443719"
-  Faker::Address.longitude #=> "-156.65548382095133"
-  Faker::Address.full_address #=> "282 Kevin Brook, Imogeneborough, CA 58517"
 end

@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   get 'home/index'
-  get 'home/reseed'
+  get 'home/test_data'
+  get 'home/sample_data'
   root 'home#index'
   resources :videos
   resources :articles
