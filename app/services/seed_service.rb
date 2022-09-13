@@ -57,13 +57,12 @@ class SeedService
   private
 
   def test_data_regions
-    @region_random = create(:region)
     @region_western_sydney = create(:region, :western_sydney)
-    @region_western_sydney2 = create(:region, :western_sydney)
-    @region_western_sydney3 = create(:region, :western_sydney)
+    @region_western_sydney2 = create(:region, :western_sydney) # create it again Sam
     @region_sydney = create(:region, :sydney)
     @region_eastern_suburbs = create(:region, :eastern_suburbs)
     @region_inner_west = create(:region, :inner_west)
     @region_north_shore = create(:region, :north_shore)
+    @regions_random = create_list(:region, 4)
   end
 end
